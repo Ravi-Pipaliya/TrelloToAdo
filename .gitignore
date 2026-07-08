@@ -1,0 +1,16 @@
+# Build artifacts
+bin/
+obj/
+.vs/
+
+# Local tooling
+.claude/
+
+# Real credentials - never commit this. Copy setup-env.ps1.template instead.
+setup-env.ps1
+
+# Leftover test/debug files
+test-*.png
+test-*.webp
+test-*.jpg
+files.zip

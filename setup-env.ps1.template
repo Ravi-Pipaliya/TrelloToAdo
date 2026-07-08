@@ -1,0 +1,29 @@
+# Copy this file to setup-env.ps1 and fill in your real values.
+# setup-env.ps1 is for your local use only - do not commit or share it.
+#
+# Where to get each value:
+#   TRELLO_KEY / TRELLO_TOKEN -> https://trello.com/power-ups/admin (or
+#       https://trello.com/app-key for the key, then generate a token)
+#   TRELLO_BOARD_ID           -> open the board, "Show Menu" -> "..." ->
+#       "More" -> "Print, export, and share" -> "Export as JSON" (id is in
+#       the JSON), or from the URL /b/<shortId>/... using
+#       https://trello.com/1/members/me/boards?key=...&token=...
+#   ADO_ORG / ADO_PROJECT     -> from your Azure DevOps URL:
+#       https://dev.azure.com/<ADO_ORG>/<ADO_PROJECT>
+#   ADO_PAT                   -> Azure DevOps -> User settings -> Personal
+#       access tokens -> New Token (scope: Work Items - Read & Write)
+
+$env:TRELLO_KEY      = "your-trello-key"
+$env:TRELLO_TOKEN     = "your-trello-token"
+$env:TRELLO_BOARD_ID  = "your-trello-board-id"
+$env:ADO_ORG          = "your-ado-org"
+$env:ADO_PROJECT      = "your-ado-project"
+$env:ADO_PAT          = "your-ado-pat"
+
+# The Azure DevOps work item type to create for each Trello card.
+# Defaults to "User Story" if unset. If your project's process template
+# doesn't have a "User Story" type (e.g. the Basic process), set this to
+# "Issue" instead.
+$env:ADO_WORK_ITEM_TYPE = "User Story"
+
+Write-Host "Environment variables set for this session." -ForegroundColor Green
